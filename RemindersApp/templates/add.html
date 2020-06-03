@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="/add" method="post">
+  <input type="text" name="reminder" id="reminder" placeholder="Reminder Name">
+  <input type="submit" id="submit" disabled>
+</form>
+<script>
+  document.querySelector("#reminder").onkeyup = function() {
+    if (document.querySelector("#reminder").value === ""){
+      document.querySelector("#submit").disabled = true
+    } else{
+        document.querySelector("#submit").disabled = false
+      }
+  }
+</script>
+{% endblock %}
